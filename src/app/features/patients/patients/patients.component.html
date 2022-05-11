@@ -1,0 +1,17 @@
+<div class="container">
+  <div rtl>
+    <h1 class="main-heading">{{ 'stms.patients.title' | translate }}</h1>
+
+    <div class="patients-list">
+      <mat-card *ngFor="let patient of patients$ | async">
+        <mat-card-title>{{ patient?.fullName }} <code>{{ patient?.isActive ? 'Active' : 'Disabled' }}</code></mat-card-title>
+        <mat-card-subtitle>ID: {{ patient?.defaultId }}</mat-card-subtitle>
+
+        <a (click)="addToFav(patient)" [class.isFav]="patient.isFav" mat-icon-button>
+          <fa-icon icon="heart"></fa-icon>
+        </a>
+      </mat-card>
+    </div>
+
+  </div>
+</div>

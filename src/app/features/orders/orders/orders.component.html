@@ -1,0 +1,13 @@
+<div class="container">
+  <div rtl>
+    <h1 class="main-heading">{{ 'stms.orders.title' | translate }}</h1>
+
+    <mat-card *ngFor="let order of orders$ | async">
+      <mat-card-title>{{ order?.orderName }} <code>{{ order?.status?.name }}</code></mat-card-title>
+      <mat-card-subtitle>Creator: {{ order?.creator?.name || 'Anonymous' }}</mat-card-subtitle>
+      <a (click)="addToFav(order)" [class.isFav]="order.isFav" mat-icon-button>
+        <fa-icon icon="heart" color="primary"></fa-icon>
+      </a>
+    </mat-card>
+  </div>
+</div>

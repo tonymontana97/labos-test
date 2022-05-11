@@ -1,0 +1,55 @@
+@import '../../../../styles-variables';
+
+mat-card {
+  margin: 0 0 20px 0;
+
+  mat-card-title {
+    position: relative;
+    font-size: 16px;
+
+    code {
+      position: absolute;
+      top: 11px;
+      right: 0;
+      float: right;
+      font-size: 10px;
+    }
+  }
+  @media (max-width: map-get($grid-breakpoints, sm)) {
+    mat-card-subtitle {
+      min-height: auto;
+    }
+  }
+
+  a {
+    fa-icon {
+      position: relative;
+      bottom: 2px;
+      font-size: 16px;
+      margin: 6px;
+    }
+  }
+
+  a[mat-icon-button] {
+    position: relative;
+    left: 5px;
+  }
+}
+
+.patients-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 16px;
+
+  .mat-card:not(:nth-child(4n)) {
+    margin-right: 1%;
+  }
+
+  .mat-card {
+    width: 24%;
+  }
+}
+
+.isFav {
+  color: red;
+}
